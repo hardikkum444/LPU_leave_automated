@@ -24,6 +24,10 @@ This is a basic Python script that automates the process of applying for leave u
 
 ### Step 4: Ready to Use
 Now you're all set to use the script!
+Run the script using (make sure you have python3 installed on your system!).
+    ```bash
+    python3 leave_applier.py
+    ```
 
 ## Usage
 - Ensure you have Python installed.
