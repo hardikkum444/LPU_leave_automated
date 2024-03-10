@@ -1,7 +1,7 @@
 # Dont run this, run leave_applier.py
-# Run this only if want to run without GUI of firefox opening 
+# Run this only if you want to run without firefoxe's GUI
 # This is strictly terminal based
-# PLEASE LOOK AT LINE 129 FOR MOR REFERENCE!!!
+# PLEASE LOOK AT LINE 129 FOR MORE REFERENCE!!!
 # No threads have been put to sleep (pretty quick as well)
 
 from selenium import webdriver
