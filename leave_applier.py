@@ -1,3 +1,6 @@
+# I have made the thread sleep in between every step, for clarity and stability
+# you can comment the .sleep method to increase the speed
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
