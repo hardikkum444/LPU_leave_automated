@@ -2,9 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
 import time
 
-
+GREEN = "\033[92m"
+RESET = "\033[0m"
 
 def get_creds():
 
@@ -19,7 +21,10 @@ def get_creds():
 
 def login_to_website(username, password, stay_adress, mobile_number, leave_reason):
    
-    driver = webdriver.Firefox()
+    options = Options()
+    options.headless = True
+    driver = webdriver.Firefox(options=options)
+    #driver = webdriver.Firefox()
 
     driver.get("https://ums.lpu.in/lpuums/")
 
@@ -73,8 +78,19 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
 
+    time.sleep(2)
     # driver.quit()
+    driver.find_element("id","ctl00_cphHeading_enddateRadDateTimePicker2_popupButton").click()
 
+    driver.find_element(By.XPATH, "//a[text()='23']").click()
+
+    time.sleep(2)
+
+    driver.find_element("id","ctl00_cphHeading_enddateRadDateTimePicker2_timePopupLink").click()
+
+    driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
+    
+    print(f"{GREEN}Leave applied successfully{RESET}")
 
 def main():
 
