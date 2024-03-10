@@ -39,9 +39,6 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
     # driver = webdriver.Firefox(options=options)
     driver = webdriver.Firefox()
     
-    # date = input("date of leaving")
-    #date = '24'
-
     driver.get("https://ums.lpu.in/lpuums/")
 
     driver.find_element("name","txtU").send_keys(username)
@@ -117,7 +114,7 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     driver.find_element(By.XPATH, xpath_expression4).click()
 
-#    driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
+    # driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
     
     print(f"{GREEN}Leave applied successfully{RESET}")
 
@@ -132,6 +129,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# ctl00_cphHeading_ddlLeaveTerm
-# Term-II
