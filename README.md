@@ -1,4 +1,4 @@
-# Automated Leave Application using Selenium and Python
+# Leave is now automated
 
 This is a basic Python script that automates the process of applying for leave using Selenium.
 
