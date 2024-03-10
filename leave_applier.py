@@ -13,6 +13,14 @@ def get_creds():
 
     username      = input("Username-> ")
     password      = getpass.getpass("Password-> ")
+    print()
+    print("which type?")
+    print("'1' for night leave")
+    print("'2' for day leave")
+    print("'3' for day leave (extended)")
+    print("'4' for night leave (extended)")
+    num = input("Enter digit only-> ")
+    print()
     stay_adress   = input("Stay Address-> ")
     mobile_number = input("Guardian mobile number-> ")
     leave_reason  = input("Leave reason-> ")
@@ -21,10 +29,10 @@ def get_creds():
     date2         = input("Date of returning-> ")
     time2         = input("Time of returning (format ex: 7:45 PM)-> ")
     
-    return username,password,stay_adress,mobile_number,leave_reason, date1, date2, time1, time2
+    return username,password,stay_adress,mobile_number,leave_reason, date1, date2, time1, time2, num
 
 
-def login_to_website(username, password, stay_adress, mobile_number, leave_reason, date1, date2, time1, time2):
+def login_to_website(username, password, stay_adress, mobile_number, leave_reason, date1, date2, time1, time2, num):
    
     # options = Options()
     # options.headless = True
@@ -56,7 +64,7 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
     time.sleep(1)
 
     dropdown = Select(driver.find_element("name","ctl00$cphHeading$drpLeaveType"))
-    dropdown.select_by_index(3)
+    dropdown.select_by_index(num)
     
     time.sleep(1)
 
@@ -117,8 +125,8 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
 def main():
 
-    username, password, stay_adress, mobile_number, leave_reason, date1, date2, time1, time2 = get_creds()
-    login_to_website(username, password, stay_adress, mobile_number, leave_reason, date1, date2, time1, time2)
+    username, password, stay_adress, mobile_number, leave_reason, date1, date2, time1, time2, num = get_creds()
+    login_to_website(username, password, stay_adress, mobile_number, leave_reason, date1, date2, time1, time2, num)
 
 
 
