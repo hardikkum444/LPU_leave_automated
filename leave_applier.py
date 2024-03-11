@@ -39,13 +39,7 @@ def get_creds():
 
 def login_to_website(username, password, stay_adress, mobile_number, leave_reason, date1, date2, time1, time2, num):
    
-    # options = Options()
-    # options.headless = True
-    # driver = webdriver.Firefox(options=options)
     driver = webdriver.Firefox()
-    
-    # date = input("date of leaving")
-    #date = '24'
 
     driver.get("https://ums.lpu.in/lpuums/")
 
@@ -128,7 +122,7 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     driver.find_element(By.XPATH, xpath_expression2).click()
 
-    # driver.find_element(By.XPATH, "//a[text()='23']").click()
+    #driver.find_element(By.XPATH, "//a[text()='23']").click()
 
     time.sleep(1)
 
@@ -136,11 +130,11 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     driver.find_element(By.XPATH, xpath_expression4).click()
 
-#    driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
+    #driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
     
     print(f"{GREEN}Leave applied successfully{RESET}")
 
-    #this will quit without applying leave beacuse script doesn't automatically click SUBMIT (for safety reasons)
+    # this will quit without applying leave beacuse script doesn't automatically click SUBMIT (for safety reasons)
     #driver.quit()
 
 def main():
