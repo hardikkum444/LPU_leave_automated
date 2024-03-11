@@ -1,8 +1,11 @@
 # Dont run this, run leave_applier.py
-# Run this only if you want to run without firefoxe's GUI
+# Run this only if want to run without GUI of firefox opening 
 # This is strictly terminal based
-# PLEASE LOOK AT LINE 129 FOR MORE REFERENCE!!!
+# PLEASE LOOK AT LINE 129 FOR MOR REFERENCE!!!
 # No threads have been put to sleep (pretty quick as well)
+
+# Script will now close any UMS pop-ups automatically
+# Stability has been added (some .sleep exist)
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -55,27 +58,39 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
     driver.find_element("id","TxtpwdAutoId_8767").send_keys(password)
     driver.find_element("id","iBtnLogins150203125").click()
     
-  #  time.sleep(1)
+   # time.sleep(1)
 
+    try:
+              checkbox = driver.find_element("id","chkReadMessage")
+              confirm = driver.find_element("id","btnClose")
+
+              checkbox.click()
+              confirm.click()
+              print(f"{RED}UMS pop-up message closed{RESET}")
+
+    except:
+        print()
+        print(f"{GREEN}no pop-up message found, continuing with the script{RESET}\n")
+    
     driver.get("https://ums.lpu.in/lpuums/frmStudentHostelLeaveApplicationTermWise.aspx")
 
-  #  time.sleep(1)
+    time.sleep(1)
 
     dropdown = Select(driver.find_element("name","ctl00$cphHeading$ddlLeaveTerm"))
     dropdown.select_by_index(1)
     
-  #  time.sleep(1)
+    time.sleep(1)
 
     dropdown = Select(driver.find_element("name","ctl00$cphHeading$drpLeaveType"))
     dropdown.select_by_index(num)
     
-    #time.sleep(1)
+    time.sleep(1)
 
     dropdown = Select(driver.find_element("name","ctl00$cphHeading$ddlVisitDay"))
 
     dropdown.select_by_visible_text("Other")
 
-  #  time.sleep(1)
+    time.sleep(1)
     
     driver.find_element("id","ctl00_cphHeading_txtPlaceToVisit").send_keys(stay_adress)
 
@@ -83,7 +98,7 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     driver.find_element("id","ctl00_cphHeading_txtVisitingMobile").send_keys(mobile_number)
     
-  #  time.sleep(1)
+    time.sleep(1)
     
     driver.find_element("id","ctl00_cphHeading_txtLeaveReason").send_keys(leave_reason)
 
@@ -98,7 +113,7 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     #driver.find_element(By.XPATH, "//a[text()='22']").click()
 
-  #  time.sleep(1)
+    time.sleep(1)
 
     driver.find_element("id","ctl00_cphHeading_startdateRadDateTimePicker1_timePopupLink").click()
 
@@ -106,7 +121,7 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     #driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
 
-  #  time.sleep(1)
+    time.sleep(1)
 
     driver.find_element("id","ctl00_cphHeading_enddateRadDateTimePicker2_popupButton").click()
 
@@ -114,7 +129,7 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     # driver.find_element(By.XPATH, "//a[text()='23']").click()
 
-    #time.sleep(1)
+    time.sleep(1)
 
     driver.find_element("id","ctl00_cphHeading_enddateRadDateTimePicker2_timePopupLink").click()
 
