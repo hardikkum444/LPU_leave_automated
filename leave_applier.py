@@ -1,5 +1,6 @@
 # I have made the thread sleep in between every step, for clarity and stability
 # you can comment the .sleep method to increase the speed
+# Script will now close up any pop-up messages as well
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -10,6 +11,7 @@ import time
 import getpass
 
 GREEN = "\033[92m"
+RED = "\033[91m"
 RESET = "\033[0m"
 
 def get_creds():
@@ -42,7 +44,12 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
     # driver = webdriver.Firefox(options=options)
     driver = webdriver.Firefox()
     
+    # date = input("date of leaving")
+    #date = '24'
+
     driver.get("https://ums.lpu.in/lpuums/")
+
+    time.sleep(1)
 
     driver.find_element("name","txtU").send_keys(username)
     driver.find_element("id","TxtpwdAutoId_8767").send_keys(password)
@@ -53,6 +60,18 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
     driver.find_element("id","iBtnLogins150203125").click()
     
     time.sleep(1)
+
+    try:
+              checkbox = driver.find_element("id","chkReadMessage")
+              confirm = driver.find_element("id","btnClose")
+
+              checkbox.click()
+              confirm.click()
+              print(f"{RED}UMS pop-up message closed{RESET}")
+
+    except:
+        print()
+        print(f"{GREEN}no pop-up message found, continuing with the script{RESET}\n")
 
     driver.get("https://ums.lpu.in/lpuums/frmStudentHostelLeaveApplicationTermWise.aspx")
 
@@ -117,11 +136,12 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     driver.find_element(By.XPATH, xpath_expression4).click()
 
-    # driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
+#    driver.find_element(By.XPATH, "//a[text()='7:45 PM']").click()
     
     print(f"{GREEN}Leave applied successfully{RESET}")
 
-    driver.quit()
+    #this will quit without applying leave beacuse script doesn't automatically click SUBMIT (for safety reasons)
+    #driver.quit()
 
 def main():
 
@@ -132,3 +152,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
