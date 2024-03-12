@@ -59,6 +59,8 @@ This setup is specifically for Linux. <br>
     - In the System Properties window, click on the "Environment Variables" button.
     - Under "System variables", find the "Path" variable and click "Edit".
     - Add the directory path containing `geckodriver.exe` to the list of paths.
+  
+## DONT FORGET TO READE THE SCRIPT (windows.py) FOR IMP INSTRUCTIONS!
 
 ### Step 4: Ready to Use
 Now you're all set to use the script!
