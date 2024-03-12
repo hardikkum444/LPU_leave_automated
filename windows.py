@@ -50,6 +50,8 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
 
     options = Options()
     options.binary_location = firefox_binary_path
+    # uncomment the below line if you want to execute without GUI (headless-mode), but you wont be able to click 'submit' without GUI, FOR THAT REFER LINE 151!
+    # options.add_argument("-headless")
     driver = webdriver.Firefox(service=service, options=options)
 
 
@@ -146,8 +148,9 @@ def login_to_website(username, password, stay_adress, mobile_number, leave_reaso
     
     print(f"{GREEN}Leave applied successfully{RESET}")
 
-    # this will quit without applying leave beacuse script doesn't automatically click SUBMIT (for safety reasons)
-    #driver.quit()
+    # this will quit and apply the leave in headless mode, only if you are confident!
+    # driver.find_element("name","ctl00$cphHeading$btnSubmit").click()
+    # driver.quit()
 
 def main():
 
