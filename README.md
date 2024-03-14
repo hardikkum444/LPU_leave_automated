@@ -38,6 +38,7 @@ python3 leave_applier.py
 
 ## Note
 This setup is specifically for Linux. <br>
+ALso please ensure that you have a stable internet connection.
 
 ----------------------------------------------------------------------------------------------
 
@@ -60,7 +61,7 @@ This setup is specifically for Linux. <br>
     - Under "System variables", find the "Path" variable and click "Edit".
     - Add the directory path containing `geckodriver.exe` to the list of paths.
   
-## DONT FORGET TO READE THE SCRIPT (windows.py) FOR IMP INSTRUCTIONS!
+## DONT FORGET TO READ THE SCRIPT (windows.py) FOR IMP INSTRUCTIONS!
 
 ### Step 4: Ready to Use
 Now you're all set to use the script!
@@ -78,3 +79,4 @@ python windows.py
 
 ## Note
 This setup is specifically for Windows. 
+ALso please ensure that you have a stable internet connection.
