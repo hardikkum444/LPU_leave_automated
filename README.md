@@ -83,7 +83,8 @@ ALso please ensure that you have a stable internet connection.
 
 ## --> Setup fot the GUI version
 
-<center><img src="gui.png"</center>
+<center><img src="gui.png" width="550" height="600"></center>
+
 
 ### Steps to follow for the GUI version:
 1. Install tkinter and customtkinter libraries using the following command on the terminal
