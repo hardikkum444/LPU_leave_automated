@@ -20,13 +20,6 @@ def get_creds():
 
     username      = entry1.get()
     password      = entry2.get()
-    # print()
-    # print("which type?")
-    # print("'1' for night leave")
-    # print("'2' for day leave")
-    # print("'3' for day leave (extended)")
-    # print("'4' for night leave (extended)")
-    # label2.configure(text="'1' for night leave\n'2' for day leave\n'3' for daye leave (extended)\n'4' for night leave (extended)")
     num = entry3.get()
     print()
     stay_adress   = entry4.get()
