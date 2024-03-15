@@ -80,3 +80,22 @@ python windows.py
 ## Note
 This setup is specifically for Windows. 
 ALso please ensure that you have a stable internet connection.
+
+## --> Setup fot the GUI version
+
+<center><img src="gui.png"</center>
+
+### Steps to follow for the GUI version:
+1. Install tkinter and customtkinter libraries using the following command on the terminal
+   ```bash
+   pip3 install tk
+   ```
+   ```bash
+   pip3 install customtkinter
+   ```
+2. Make sure you have followed the above steps for your system, and then simply run the 'leave_gui.py' file
+    ```bash
+    python3 leave_gui.py
+    ```
+
+### Again please make sure that you have a good internet connection
